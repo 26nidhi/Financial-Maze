@@ -1,0 +1,29 @@
+{
+  "name": "financialmaze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/26nidhi/Financial-Maze.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/26nidhi/Financial-Maze/issues"
+  },
+  "homepage": "https://github.com/26nidhi/Financial-Maze#readme",
+  "dependencies": {
+    "three": "^0.181.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.2"
+  }
+}

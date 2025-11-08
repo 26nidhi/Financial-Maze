@@ -1,62 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Financial Quest Maze</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
-      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/",
-      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js"
-    }
-  }
-  </script>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div id="game-container"></div>
-  <!-- HUD overlays -->
-  <div id="hud">
-    <div id="score-panel">
-      <span id="score-icon">💰</span>
-      <span id="score-text">Financial Health Score: <span id="score-value">750</span></span>
-      <div id="score-bar-bg"><div id="score-bar"></div></div>
-    </div>
-    <canvas id="minimap"></canvas>
-    <div id="compass">N</div>
-  </div>
-  <!-- Interaction prompt -->
-  <div id="interaction-hint" class="hidden">Press <b>E</b> to interact</div>
-  <!-- Financial Decision Overlay -->
-  <div id="checkpoint-ui" class="hidden">
-    <div class="decision-panel">
-      <div class="decision-question" id="decision-question"></div>
-      <div class="decision-options">
-        <button id="option-save" class="option-btn save"> <span>✔️</span> Save </button>
-        <button id="option-spend" class="option-btn spend"> <span>🛒</span> Spend </button>
-      </div>
-      <div class="decision-feedback" id="decision-feedback"></div>
+  <div id="overlay">
+    <div id="hud">
+      <span id="score">Financial Health: <strong id="score-val">500</strong></span>
+      <button id="startBtn">Start / Lock Mouse</button>
     </div>
   </div>
-  <!-- Pause Menu -->
-  <div id="pause-menu" class="hidden">
-    <div class="menu-panel">
-      <h2>Paused</h2>
-      <button id="resume-btn">Resume</button>
-      <button id="restart-btn">Restart</button>
-      <button id="exit-btn">Exit</button>
+
+  <div id="end-screen" class="hidden">
+    <div class="panel">
+      <h2>Game Over</h2>
+      <p>Your final score: <span id="final-score">0</span></p>
+      <button id="play-again">Play Again</button>
     </div>
   </div>
-  <!-- Results Screen -->
-  <div id="results-screen" class="hidden">
-    <div class="menu-panel">
-      <h2>Maze Complete!</h2>
-      <div id="final-score"></div>
-      <button id="restart-btn2">Restart</button>
+
+  <div id="decision-ui" class="hidden">
+    <div id="question">Decision</div>
+    <div class="options">
+      <button id="opt-good" class="opt">Good</button>
+      <button id="opt-bad" class="opt">Risky</button>
     </div>
   </div>
-  <script type="module" src="main.js"></script>
+
+  <canvas id="c"></canvas>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
